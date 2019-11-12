@@ -1,5 +1,5 @@
 title: GTFOBins privilege escalation in Linux Shell Commands
-description: Detects suspicious shell commands used in GTFOBins privilege escalation methods (see references)
+description: Detects suspicious shell commands used in GTFOBins privilege escalation methods (see references) - A keyword of https://gtfobins.github.io/
 references:
     - https://gtfobins.github.io/
     - https://in.security/using-auditbeat-and-elk-to-monitor-gtfobins-binaries/
@@ -12,8 +12,7 @@ detection:
     keywords:
         # GTFOBins privilege escalation suspicious commands
         - 'apt-get changelog apt'
-        - 'wget * - http* | sh'
-        - 'wget * - http* | bash'
+        - 'Pre-Invoke * /bin/sh'
         # GTFOBins non-interactive reverse shell
         - 'awk * /inet/tcp/'
         - 'cpan ! use Socket:'
@@ -36,5 +35,3 @@ falsepositives:
 level: high
 tags:
     - attack.gtfobins_commands_execution
-    - attack.gtfobins_detection
-    
