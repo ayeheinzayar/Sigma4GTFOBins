@@ -10,5 +10,6 @@ On the other hand, GTFOBins is a list of Unix binaries that can be abused to get
 
 Detection of GTFOBins with Sigma rule included in,
   - https://github.com/xheinz22/sigma4GTFOBins/blob/master/lnx_shell_gtfobins_commands_1.yml
-
+  - https://github.com/xheinz22/sigma4GTFOBins/blob/master/lnx_shell_gtfobins_commands_2.yml
+  
 **This repo contains the Sigma rules to detect GTFOBins which unix binaries will bypass security restrictions.
