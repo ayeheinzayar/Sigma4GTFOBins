@@ -10,8 +10,7 @@ logsource:
     product: linux
 detection:
     keywords:
-        # GTFOBins suspicious commands
-		# apt-get binary
+        # GTFOBins suspicious shell commands
         - 'apt-get changelog apt'
 		- '*apt-get * Pre-Invoke * /bin/sh'
 		- 'apt-get update -o APT::Update::Pre-Invoke::=/bin/sh'
