@@ -12,23 +12,23 @@ detection:
     keywords:
         # GTFOBins suspicious shell commands
         - 'apt-get changelog apt'
-		- '*apt-get * Pre-Invoke * /bin/sh'
-		- 'apt-get update -o APT::Update::Pre-Invoke::=/bin/sh'
-		# awk binary
-		- '*awk * system * /bin/sh'
-		# cpulimit binary
-		- 'cpulimit * /bin/sh'
-		- 'cpulimit * /bin/bash'
-		# emacs binary
-		- 'emacs * term * /bin/sh'
-		# find binary
-		- 'find * exec * /bin/sh'
-		- 'find * exec * /bin/bash'
-		# gdb binary
-		- 'gdb * !sh'
-		# strace binary
-		- 'strace * /dev/null /bin/sh'
-		- 'strace * /dev/null /bin/bash'
+	- '*apt-get * Pre-Invoke * /bin/sh'
+	'apt-get update -o APT::Update::Pre-Invoke::=/bin/sh'
+	# awk binary
+	- '*awk * system * /bin/sh'
+	# cpulimit binary
+	- 'cpulimit * /bin/sh'
+	- 'cpulimit * /bin/bash'
+	# emacs binary
+	'emacs * term * /bin/sh'
+	# find binary
+	- 'find * exec * /bin/sh'
+	- 'find * exec * /bin/bash'
+	# gdb binary
+	- 'gdb * !sh'
+	# strace binary
+	- 'strace * /dev/null /bin/sh'
+	- 'strace * /dev/null /bin/bash'
     condition: keywords
 falsepositives:
     - GTFOBins Detection
