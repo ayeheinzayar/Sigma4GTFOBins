@@ -1,0 +1,71 @@
+title: GTFOBins privilege escalation in Linux Shell Commands
+description: Detects suspicious shell commands used in GTFOBins privilege escalation methods (see references)
+references:
+    - https://gtfobins.github.io/
+    - https://in.security/using-auditbeat-and-elk-to-monitor-gtfobins-binaries/
+author: Aye Hein Zayar
+date: 2019/11/14
+modified: 2019/11/16
+logsource:
+    product: linux
+detection:
+    keywords:
+        # GTFOBins suspicious shell commands
+        - 'apt-get changelog apt'
+        - 'ash'
+        - 'awk * system * /bin/sh'
+        - 'busybox sh'
+        - 'cpan'
+        - 'cpulimit -l 100 -f /bin/sh'
+        - 'docker run -v /:/mnt --rm -it alpine chroot /mnt sh'
+        - 'ed'
+        - 'emacs * term * /bin/sh'
+        - 'env /bin/sh'
+        - 'expect -c * spawn * /bin/sh'
+        - 'echo * exec * /bin/sh'
+        - 'facterlib * facter'
+        - 'find * exec /bin/sh'
+        - 'flock -u * /bin/sh'
+        - 'gawk * system * /bin/sh'
+        - 'gdb -nx -ex * sh'
+        - 'gimp * import os * os.system'
+        - 'exec * git * help'
+        - 'ionice /bin/sh'
+        - 'echo * exec * /bin/sh'
+        - 'journalctl'
+        - 'jrunscript * exec * /bin/sh'
+        - '/lib64/ld * /bin/sh'
+        - '/bin/sh * less /etc/profile'
+        - 'logsave /dev/null /bin/sh -i'
+        - 'ltrace -b -L /bin/sh'
+        - 'lua -e * os.execute * /bin/sh'
+        - 'mail * exec * /bin/sh'
+        - 'make -s -eval * /bin/sh'
+        - 'mawk * system * /bin/sh'
+        - 'nano -s /bin/sh'
+        - 'nawk * system * /bin/sh'
+        - 'nice /bin/sh'
+        - 'nmap --interactive'
+        - 'node -e * spawn * /bin/sh'
+        - 'perl -e * exec * /bin/sh'
+        - 'php -r * getenv'
+        - 'puppet * exec * /bin/sh'
+        - 'python * os.system * /bin/sh'
+        - 'rlwrap /bin/sh'
+        - 'rpm --eval * execute * /bin/sh'
+        - 'rpmquery --eval * execute * /bin/sh'
+        - 'rsync -e * sh * /dev/null'
+        - 'ruby -e * exec * /bin/sh'
+        - 'run-parts --new-session --regex * /bin'
+        - 'rvim * os.exec * /bin/sh'
+        - 'script -q /dev/null'
+        - 'sed * exec sh'
+        - '/usr/bin/service ../../bin/sh'
+        - 'setarch * /bin/sh'
+    condition: keywords
+falsepositives:
+    - GTFOBins Detection
+level: high
+tags:
+    - attack.gtfobins_commands_execution
+    

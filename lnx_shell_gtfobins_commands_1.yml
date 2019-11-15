@@ -10,7 +10,7 @@ logsource:
     product: linux
 detection:
     keywords:
-        # GTFOBins privilege escalation suspicious commands
+        # GTFOBins suspicious shell commands
         - 'apt-get changelog apt'
         - 'Pre-Invoke * /bin/sh'
         # GTFOBins non-interactive reverse shell

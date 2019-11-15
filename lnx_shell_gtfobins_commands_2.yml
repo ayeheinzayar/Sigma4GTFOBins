@@ -10,7 +10,7 @@ logsource:
     product: linux
 detection:
     keywords:
-        # GTFOBins privilege escalation suspicious commands
+        # GTFOBins suspicious shell commands
         - 'cpulimit -l * /bin/sh'
         - 'cpulimit -l * /bin/bash'
         - 'dmsetup ls --exec * /bin/sh'
