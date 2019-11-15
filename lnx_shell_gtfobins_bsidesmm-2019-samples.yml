@@ -1,0 +1,38 @@
+title: GTFOBins privilege escalation in Linux Shell Commands
+description: GTFOBins Detection - BSides Myanmar 2019 showcase
+references:
+    - https://gtfobins.github.io/
+    - https://in.security/using-auditbeat-and-elk-to-monitor-gtfobins-binaries/
+author: Aye Hein Zayar
+date: 2019/11/16
+modified: 2019/11/16
+logsource:
+    product: linux
+detection:
+    keywords:
+        # GTFOBins privilege escalation suspicious commands
+		# apt-get binary
+        - 'apt-get changelog apt'
+		- '*apt-get * Pre-Invoke * /bin/sh'
+		- 'apt-get update -o APT::Update::Pre-Invoke::=/bin/sh'
+		# awk binary
+		- '*awk * system * /bin/sh'
+		# cpulimit binary
+		- 'cpulimit * /bin/sh'
+		- 'cpulimit * /bin/bash'
+		# emacs binary
+		- 'emacs * term * /bin/sh'
+		# find binary
+		- 'find * exec * /bin/sh'
+		- 'find * exec * /bin/bash'
+		# gdb binary
+		- 'gdb * !sh'
+		# strace binary
+		- 'strace * /dev/null /bin/sh'
+		- 'strace * /dev/null /bin/bash'
+    condition: keywords
+falsepositives:
+    - GTFOBins Detection
+level: high
+tags:
+    - attack.gtfobins_commands_execution
