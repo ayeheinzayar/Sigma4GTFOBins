@@ -1,0 +1,25 @@
+title: GTFOBins privilege escalation in Linux Shell Commands
+description: Detects suspicious shell commands used in GTFOBins privilege escalation methods (see references)
+references:
+    - https://gtfobins.github.io/
+    - https://in.security/using-auditbeat-and-elk-to-monitor-gtfobins-binaries/
+author: Aye Hein Zayar
+date: 2020/01/13
+modified: 2020/01/13
+logsource:
+    product: linux
+detection:
+    keywords:
+        # GTFOBins command
+        - 'aria2c --on-download-error=* http*'
+        - 'aria2c --allow-overwrite --gid * --on-download-complete=bash http*'
+        - 'crontab -e'
+        - 'php -r * proc_close'
+        - 'sed -n * /etc/hosts'
+        - 'tcpdump -ln -i lo -w /dev/null -W 1 -G 1 -z *'
+    condition: keywords
+falsepositives:
+    - GTFOBins Detection
+level: high
+tags:
+    - attack.gtfobins_command
