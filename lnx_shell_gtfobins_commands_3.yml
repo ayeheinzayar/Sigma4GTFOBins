@@ -10,41 +10,41 @@ logsource:
     product: linux
 detection:
     keywords:
-        # GTFOBins suspicious shell commands - e commands
-- 'eb logs'
-- 'emacs -Q -nw --eval * /bin/sh'
-- 'env /bin/sh'
-- 'expect -c * spawn /bin/sh'
- 'expect -c * spawn /bin/sh;interact'
-# GTFOBins non-interactive reverse shell
-- 'bash -c * /dev/tcp/'
-- 'cpan * socket'
-# GTFOBins file download
- 'echo * import OS; os.execl'
-# GTFOBins file upload
-- 'cancel -u'
-# GTFOBins file write
-- 'csh -c * echo'
-# GTFOBins file read
-- 'base64 * base64 --decode'
-- 'diff --line-format=%L /dev/null'
-# GTFOBins Library Load
-- 'echo * from ctypes import cdll * cdll.LoadLibrary * lib.so'
-# GTFOBins Sudo
-- 'sudo easy_install'
-- 'sudo eb logs'
-- 'sudo ed'
-- 'sudo env /bin/sh'
-- 'sudo eqn'
-- 'sudo expand'
-- 'sudo expect -c * spawn /bin/sh;interact'
-# GTFOBins limited SUID
-- 'sudo sh -c * cp $(which ed) * chmod +s ./ed'
-# GTFOBIns SUID
-- 'sudo sh -c * cp $(which env) * chmod +s ./env'
-- 'sudo sh -c * cp $(which eqn) * chmod +s ./eqn'
-- 'sudo sh -c * cp $(which expand) * chmod +s ./expand'
-- 'sudo sh -c * cp $(which expect) * chmod +s ./expect'
+    # GTFOBins suspicious shell commands - e commands
+    - 'eb logs'
+    - 'emacs -Q -nw --eval * /bin/sh'
+    - 'env /bin/sh'
+    - 'expect -c * spawn /bin/sh'
+    - 'expect -c * spawn /bin/sh;interact'
+    # GTFOBins non-interactive reverse shell
+    - 'bash -c * /dev/tcp/'
+    - 'cpan * socket'
+    # GTFOBins file download
+    - 'echo * import OS; os.execl'
+    # GTFOBins file upload
+    - 'cancel -u'
+    # GTFOBins file write
+    - 'csh -c * echo'
+    # GTFOBins file read
+    - 'base64 * base64 --decode'
+    - 'diff --line-format=%L /dev/null'
+    # GTFOBins Library Load
+    - 'echo * from ctypes import cdll * cdll.LoadLibrary * lib.so'
+    # GTFOBins Sudo
+    - 'sudo easy_install'
+    - 'sudo eb logs'
+    - 'sudo ed'
+    - 'sudo env /bin/sh'
+    - 'sudo eqn'
+    - 'sudo expand'
+    - 'sudo expect -c * spawn /bin/sh;interact'
+    # GTFOBins limited SUID
+    - 'sudo sh -c * cp $(which ed) * chmod +s ./ed'
+    # GTFOBIns SUID
+    - 'sudo sh -c * cp $(which env) * chmod +s ./env'
+    - 'sudo sh -c * cp $(which eqn) * chmod +s ./eqn'
+    - 'sudo sh -c * cp $(which expand) * chmod +s ./expand'
+    - 'sudo sh -c * cp $(which expect) * chmod +s ./expect'
     condition: keywords
 falsepositives:
     - GTFOBins Detection
