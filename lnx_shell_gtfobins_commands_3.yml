@@ -5,7 +5,7 @@ references:
     - https://in.security/using-auditbeat-and-elk-to-monitor-gtfobins-binaries/
 author: Aye Hein Zayar
 date: 2020/03/19
-modified: 2019/03/19
+modified: 2020/06/10
 logsource:
     product: linux
 detection:
@@ -47,7 +47,7 @@ detection:
     - 'sudo sh -c * cp $(which expect) * chmod +s ./expect'
     condition: keywords
 falsepositives:
-    - GTFOBins Detection
-level: high
+    - Administrative Controls
+level: low
 tags:
     - attack.gtfobins_commands_execution
