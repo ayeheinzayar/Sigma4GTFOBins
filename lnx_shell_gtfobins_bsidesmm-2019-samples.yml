@@ -32,6 +32,6 @@ detection:
     condition: keywords
 falsepositives:
     - GTFOBins Detection
-level: high
+level: low
 tags:
     - attack.gtfobins_commands_execution
