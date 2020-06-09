@@ -11,7 +11,7 @@ On the other hand, GTFOBins is a list of Unix binaries that can be abused to get
   - [GTFOBins](https://github.com/GTFOBins/GTFOBins.github.io) <br/>
   Author : GTFOBins is a collaborative project created by [Emilio Pinna](https://twitter.com/norbemi) and [Andrea Cardaci](https://twitter.com/cyrus_and) where everyone can contribute with additional binaries and techniques.
 
-Detection of GTFOBins with Sigma rule included in,
+Detection of GTFOBins with Sigma rules included in,
   - https://github.com/xheinz22/sigma4GTFOBins/blob/master/lnx_shell_gtfobins_commands_1.yml
   - https://github.com/xheinz22/sigma4GTFOBins/blob/master/lnx_shell_gtfobins_commands_2.yml
   - https://github.com/ayeheinzayar/Sigma4GTFOBins/blob/master/lnx_shell_gtfobins_commands_3.yml
