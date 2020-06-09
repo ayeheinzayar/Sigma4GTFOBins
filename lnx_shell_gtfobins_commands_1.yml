@@ -31,8 +31,8 @@ detection:
         - 'arp -v -f * $'
     condition: keywords
 falsepositives:
-    - GTFOBins Detection
-level: high
+    - Administrative Control
+level: low
 tags:
     - attack.gtfobins_commands_execution
     
