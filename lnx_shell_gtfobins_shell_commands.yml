@@ -5,7 +5,7 @@ references:
     - https://in.security/using-auditbeat-and-elk-to-monitor-gtfobins-binaries/
 author: Aye Hein Zayar
 date: 2019/11/14
-modified: 2019/11/16
+modified: 2020/06/10
 logsource:
     product: linux
 detection:
@@ -64,8 +64,8 @@ detection:
         - 'setarch * /bin/sh'
     condition: keywords
 falsepositives:
-    - GTFOBins Detection
-level: high
+    - Administrative Controls
+level: low
 tags:
     - attack.gtfobins_commands_execution
     
