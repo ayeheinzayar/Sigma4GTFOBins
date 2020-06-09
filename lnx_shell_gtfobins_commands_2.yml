@@ -5,7 +5,7 @@ references:
     - https://in.security/using-auditbeat-and-elk-to-monitor-gtfobins-binaries/
 author: Aye Hein Zayar
 date: 2019/11/10
-modified: 2019/11/--
+modified: 2020/06/10
 logsource:
     product: linux
 detection:
