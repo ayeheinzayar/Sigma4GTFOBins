@@ -31,7 +31,7 @@ detection:
 	- 'strace * /dev/null /bin/bash'
     condition: keywords
 falsepositives:
-    - Administrative Control
+    - Administrative Controls
 level: low
 tags:
     - attack.gtfobins_commands_execution
