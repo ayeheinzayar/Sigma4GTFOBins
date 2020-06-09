@@ -19,7 +19,7 @@ detection:
         - 'tcpdump -ln -i lo -w /dev/null -W 1 -G 1 -z *'
     condition: keywords
 falsepositives:
-    - GTFOBins Detection
+    - Administrative Control
 level: low
 tags:
     - attack.gtfobins_command
