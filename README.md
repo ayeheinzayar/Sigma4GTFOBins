@@ -21,5 +21,8 @@ Detection of GTFOBins with Sigma rules can be found at,
   
 Raw detections with 7 usecases,
   - [BSidesMM 2019 Sample Rule](https://github.com/xheinz22/sigma4GTFOBins/blob/master/lnx_shell_gtfobins_bsidesmm-2019-samples.yml)
+
+Rule Detection Guide
+[Sigma Template](https://github.com/SigmaHQ/sigma/wiki/Rule-Creation-Guide)
   
 **This repo contains the Sigma rules to detect GTFOBins which unix binaries will bypass security restrictions.
