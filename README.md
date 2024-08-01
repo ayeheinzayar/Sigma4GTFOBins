@@ -5,6 +5,9 @@ Sigma is a generic and open signature format that allows you to describe relevan
   Author : Florian Roth ( Author of Sigma, Loki, munin, yarGen and other tools ) <br/>
   Github : [Neo23x0](https://github.com/Neo23x0)
 
+Rule Detection Guide
+[Sigma Template](https://github.com/SigmaHQ/sigma/wiki/Rule-Creation-Guide)
+
 
 On the other hand, GTFOBins is a list of Unix binaries that can be abused to get the f****k to break out restricted access from Unix local security restrictions. These bypassing techniques can perform multiple abusive functions such as escalate or maintain elevated privileges, transfer files, spawn bind and reverse shells and facilitate the other post-exploitations tasks.
   - [LOLABS](https://lolbas-project.github.io/) inspired for windows and multiple contributors collaborative in GTFOBins for Unix binaries.
@@ -21,8 +24,5 @@ Detection of GTFOBins with Sigma rules can be found at,
   
 Raw detections with 7 usecases,
   - [BSidesMM 2019 Sample Rule](https://github.com/xheinz22/sigma4GTFOBins/blob/master/lnx_shell_gtfobins_bsidesmm-2019-samples.yml)
-
-Rule Detection Guide
-[Sigma Template](https://github.com/SigmaHQ/sigma/wiki/Rule-Creation-Guide)
   
 **This repo contains the Sigma rules to detect GTFOBins which unix binaries will bypass security restrictions.
